@@ -1,12 +1,8 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/react-react";
 
-// CSS Modules are enabled by default in Vite for any *.module.css file.
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  css: {
-    modules: {
-      localsConvention: 'camelCaseOnly',
-    },
-  },
+  base: "/gabinety-korona/", // <--- TUTAJ wpisz dokładną nazwę swojego repozytorium na GitHubie
 });
