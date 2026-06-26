@@ -1,0 +1,121 @@
+/* ---- Reset & base ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b655d;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ---- Design tokens ---- */
+:root {
+  /* surfaces */
+  --bg: #0e0d0c;
+  --bg-alt: #121110;
+  --bg-deep: #0a0a09;
+  --surface: #1a1918;
+  --surface-2: #161513;
+  --input-bg: #0e0d0c;
+
+  /* text */
+  --text: #ece7e1;
+  --text-bright: #f2ede7;
+  --text-soft: #d9d2ca;
+  --text-muted: #a8a097;
+  --text-dim: #857e75;
+  --text-faint: #7a746b;
+  --text-ghost: #6f685f;
+  --text-fine: #5f5950;
+
+  /* lines */
+  --hairline: rgba(233, 225, 217, 0.1);
+  --hairline-strong: rgba(233, 225, 217, 0.12);
+  --hairline-soft: rgba(233, 225, 217, 0.06);
+  --hairline-input: rgba(233, 225, 217, 0.14);
+
+  /* accent (default: teal) */
+  --accent: #5e9ca1;
+  --accent-soft: rgba(94, 156, 161, 0.14);
+  --accent-line: rgba(94, 156, 161, 0.32);
+  --gold: #c9a96e;
+
+  /* shape */
+  --img-radius: 36px 90px 36px 90px;
+
+  /* layout */
+  --container: 1200px;
+  --container-narrow: 1100px;
+  --gutter: 40px;
+
+  /* type */
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+}
+
+/* ---- Accent themes (set data-accent on .app root) ---- */
+[data-accent='gold'] {
+  --accent: #c9a96e;
+  --accent-soft: rgba(201, 169, 110, 0.14);
+  --accent-line: rgba(201, 169, 110, 0.32);
+}
+
+[data-accent='sand'] {
+  --accent: #c2b196;
+  --accent-soft: rgba(194, 177, 150, 0.14);
+  --accent-line: rgba(194, 177, 150, 0.32);
+}
+
+/* ---- Hero image shape (set data-shape on .app root) ---- */
+[data-shape='straight'] {
+  --img-radius: 3px;
+}
+
+/* ---- Shared helpers ---- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

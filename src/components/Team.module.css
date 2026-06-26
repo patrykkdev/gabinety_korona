@@ -1,0 +1,148 @@
+.section {
+  padding: 104px 0;
+}
+
+.container {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.intro {
+  max-width: 540px;
+  margin: 0 0 64px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.heading {
+  margin: 0 0 18px;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-bright);
+}
+
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.introText {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.member {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.member:last-child {
+  margin-bottom: 0;
+}
+
+/* Drugi profil — zdjęcie po prawej (układ naprzemienny). */
+.flip .photo {
+  order: 2;
+}
+
+.flip .body {
+  order: 1;
+}
+
+.photo {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface);
+  filter: grayscale(1);
+  transition: filter 0.6s;
+}
+
+.photo:hover {
+  filter: grayscale(0);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.role {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--accent);
+}
+
+.name {
+  margin: 0 0 18px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-bright);
+}
+
+.bio {
+  margin: 0 0 26px;
+  max-width: 460px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 4px;
+  transition: gap 0.25s;
+}
+
+.link:hover {
+  gap: 16px;
+}
+
+.arrow {
+  color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .member {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 56px;
+  }
+
+  .flip .photo,
+  .flip .body {
+    order: initial;
+  }
+
+  .photo {
+    filter: grayscale(0);
+  }
+}

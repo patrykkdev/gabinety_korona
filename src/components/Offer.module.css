@@ -1,0 +1,160 @@
+.section {
+  background: var(--bg-alt);
+  padding: 104px 0;
+  border-top: 1px solid var(--hairline-soft);
+}
+
+.container {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.head {
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-bright);
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--hairline-strong);
+  margin-bottom: 40px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  padding: 0 0 16px;
+  margin-right: 36px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text-dim);
+  transition:
+    color 0.3s,
+    border-color 0.3s;
+}
+
+.tab:hover {
+  color: var(--text-muted);
+}
+
+.tabActive {
+  color: var(--text-bright);
+  border-bottom-color: var(--accent);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+  transition: padding-left 0.3s;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item:hover {
+  padding-left: 10px;
+}
+
+.itemTitle {
+  margin: 0 0 5px;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.itemDesc {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.plus {
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.aside {
+  background: var(--surface);
+  padding: 42px 38px;
+  border: 1px solid var(--hairline-soft);
+}
+
+.asideTitle {
+  margin: 0 0 14px;
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.asideDesc {
+  margin: 0 0 30px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.asideCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 26px;
+  transition: filter 0.25s;
+}
+
+.asideCta:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
