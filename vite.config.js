@@ -1,8 +1,7 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/react-react";
+import react from "@vitejs/plugin-react"; // <--- Zmień z '@vitejs/react-react' na '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/gabinety-korona/", // <--- TUTAJ wpisz dokładną nazwę swojego repozytorium na GitHubie
+  base: "/gabinety_korona/", // <--- Musi być dokładnie tak jak w adresie URL, z ukośnikami!
 });

@@ -1,6 +1,6 @@
 .footer {
   background: var(--bg-deep);
-  border-top: 1px solid rgba(233, 225, 217, 0.08);
+  border-top: 1px solid var(--hairline-soft);
   padding: 72px 0 40px;
 }
 
@@ -74,7 +74,7 @@
 
 .bottom {
   padding-top: 28px;
-  border-top: 1px solid rgba(233, 225, 217, 0.08);
+  border-top: 1px solid var(--hairline-soft);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

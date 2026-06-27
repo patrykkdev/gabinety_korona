@@ -17,6 +17,7 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -41,7 +42,7 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: #6b655d;
+  color: var(--text-faint);
 }
 
 ::selection {
@@ -49,37 +50,45 @@ textarea::placeholder {
   color: var(--bg);
 }
 
-/* ---- Design tokens ---- */
+/* ---- Design tokens — jasny motyw (domyślny) ---- */
 :root {
   /* surfaces */
-  --bg: #0e0d0c;
-  --bg-alt: #121110;
-  --bg-deep: #0a0a09;
-  --surface: #1a1918;
-  --surface-2: #161513;
-  --input-bg: #0e0d0c;
+  --bg: #faf9f7;
+  --bg-alt: #f4f2ee;
+  --bg-deep: #ede9e3;
+  --surface: #ffffff;
+  --surface-2: #f7f6f3;
+  --input-bg: #ffffff;
 
   /* text */
-  --text: #ece7e1;
-  --text-bright: #f2ede7;
-  --text-soft: #d9d2ca;
-  --text-muted: #a8a097;
-  --text-dim: #857e75;
-  --text-faint: #7a746b;
-  --text-ghost: #6f685f;
-  --text-fine: #5f5950;
+  --text: #1c1a18;
+  --text-bright: #0e0d0c;
+  --text-soft: #3d3a36;
+  --text-muted: #6b6560;
+  --text-dim: #8a8278;
+  --text-faint: #a09890;
+  --text-ghost: #b8b0a6;
+  --text-fine: #c5beb6;
+  --text-quote: #8a8278;
 
   /* lines */
-  --hairline: rgba(233, 225, 217, 0.1);
-  --hairline-strong: rgba(233, 225, 217, 0.12);
-  --hairline-soft: rgba(233, 225, 217, 0.06);
-  --hairline-input: rgba(233, 225, 217, 0.14);
+  --hairline: rgba(14, 13, 12, 0.1);
+  --hairline-strong: rgba(14, 13, 12, 0.12);
+  --hairline-soft: rgba(14, 13, 12, 0.06);
+  --hairline-input: rgba(14, 13, 12, 0.18);
 
   /* accent (default: teal) */
   --accent: #5e9ca1;
-  --accent-soft: rgba(94, 156, 161, 0.14);
+  --accent-soft: rgba(94, 156, 161, 0.12);
   --accent-line: rgba(94, 156, 161, 0.32);
   --gold: #c9a96e;
+
+  /* nav */
+  --nav-bg: rgba(250, 249, 247, 0.88);
+  --nav-border: rgba(14, 13, 12, 0.08);
+
+  /* ghost button border */
+  --ghost-border: rgba(14, 13, 12, 0.2);
 
   /* shape */
   --img-radius: 36px 90px 36px 90px;
@@ -92,6 +101,35 @@ textarea::placeholder {
   /* type */
   --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
   --font-serif: 'Newsreader', Georgia, serif;
+}
+
+/* ---- Ciemny motyw ---- */
+[data-theme='dark'] {
+  --bg: #0e0d0c;
+  --bg-alt: #121110;
+  --bg-deep: #0a0a09;
+  --surface: #1a1918;
+  --surface-2: #161513;
+  --input-bg: #0e0d0c;
+
+  --text: #ece7e1;
+  --text-bright: #f2ede7;
+  --text-soft: #d9d2ca;
+  --text-muted: #a8a097;
+  --text-dim: #857e75;
+  --text-faint: #7a746b;
+  --text-ghost: #6f685f;
+  --text-fine: #5f5950;
+  --text-quote: #cfc8bf;
+
+  --hairline: rgba(233, 225, 217, 0.1);
+  --hairline-strong: rgba(233, 225, 217, 0.12);
+  --hairline-soft: rgba(233, 225, 217, 0.06);
+  --hairline-input: rgba(233, 225, 217, 0.14);
+
+  --nav-bg: rgba(14, 13, 12, 0.72);
+  --nav-border: rgba(233, 225, 217, 0.08);
+  --ghost-border: rgba(233, 225, 217, 0.22);
 }
 
 /* ---- Accent themes (set data-accent on .app root) ---- */

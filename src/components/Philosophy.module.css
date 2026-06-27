@@ -53,7 +53,7 @@
   font-style: italic;
   font-size: 20px;
   line-height: 1.5;
-  color: #cfc8bf;
+  color: var(--text-quote);
 }
 
 .values {

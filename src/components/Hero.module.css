@@ -93,7 +93,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid rgba(233, 225, 217, 0.22);
+  border: 1px solid var(--ghost-border);
   color: var(--text);
   font-size: 15px;
   font-weight: 500;
