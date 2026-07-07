@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import styles from './App.module.css';
+import AnnouncementBar from './components/AnnouncementBar.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Philosophy from './components/Philosophy.jsx';
 import Team from './components/Team.jsx';
 import Offer from './components/Offer.jsx';
-import Hours from './components/Hours.jsx';
+import Cennik from './components/Cennik.jsx';
 import Gallery from './components/Gallery.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
@@ -29,13 +30,14 @@ export default function App() {
     <div className={styles.app} data-accent={THEME.accent} data-shape={THEME.shape}>
       {THEME.texture && <div className={styles.grain} aria-hidden="true" />}
 
+      <AnnouncementBar />
       <Navbar mode={mode} onToggleMode={toggleMode} />
       <main>
         <Hero />
         <Philosophy />
         <Team />
         <Offer />
-        <Hours />
+        <Cennik />
         <Gallery />
         <Contact />
       </main>

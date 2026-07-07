@@ -97,6 +97,7 @@ textarea::placeholder {
   --container: 1200px;
   --container-narrow: 1100px;
   --gutter: 40px;
+  --announce-h: 38px;
 
   /* type */
   --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
@@ -155,5 +156,11 @@ textarea::placeholder {
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --gutter: 22px;
   }
 }

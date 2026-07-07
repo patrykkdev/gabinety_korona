@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  padding: 160px 0 96px;
+  padding: calc(var(--announce-h) + 122px) 0 96px;
 }
 
 .glow {
@@ -105,28 +105,6 @@
   border-color: var(--accent);
 }
 
-.meta {
-  display: flex;
-  gap: 44px;
-  margin-top: 54px;
-  padding-top: 26px;
-  border-top: 1px solid var(--hairline);
-}
-
-.metaLabel {
-  margin: 0 0 7px;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.metaValue {
-  margin: 0;
-  font-size: 15px;
-  color: var(--text-soft);
-}
-
 .figure {
   position: relative;
   display: flex;
@@ -163,6 +141,65 @@
   object-fit: cover;
 }
 
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(14, 13, 12, 0.32), transparent 30%, transparent 65%, rgba(14, 13, 12, 0.36)),
+    linear-gradient(90deg, rgba(14, 13, 12, 0.6), transparent 32%, transparent 68%, rgba(14, 13, 12, 0.6));
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--hairline-soft);
+  border-radius: 20px;
+  padding: 16px 20px;
+  box-shadow: 0 24px 48px rgba(14, 13, 12, 0.14);
+}
+
+.cardTop {
+  top: 34px;
+  left: -18px;
+}
+
+.cardBottom {
+  bottom: 34px;
+  right: -18px;
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.cardValue {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-bright);
+  white-space: nowrap;
+}
+
+.cardLabel {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
@@ -176,11 +213,10 @@
 
 @media (max-width: 720px) {
   .hero {
-    padding: 120px 0 64px;
+    padding: calc(var(--announce-h) + 128px) 0 54px;
   }
 
-  .meta {
-    flex-wrap: wrap;
-    gap: 24px;
+  .figure {
+    display: none;
   }
 }

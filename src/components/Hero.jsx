@@ -1,6 +1,24 @@
-import { IMAGES, HERO_META } from '../data/content.js';
+import { IMAGES } from '../data/content.js';
 import Reveal from './Reveal.jsx';
 import styles from './Hero.module.css';
+
+function ShieldIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" />
+      <circle cx="12" cy="10" r="2.6" />
+    </svg>
+  );
+}
 
 export default function Hero() {
   return (
@@ -25,21 +43,34 @@ export default function Hero() {
                 Zobacz ofertę
               </a>
             </div>
-            <div className={styles.meta}>
-              {HERO_META.map((item) => (
-                <div key={item.label}>
-                  <p className={styles.metaLabel}>{item.label}</p>
-                  <p className={styles.metaValue}>{item.value}</p>
-                </div>
-              ))}
-            </div>
           </Reveal>
 
           <Reveal className={styles.figure} delay={120}>
             <div className={styles.frameWrap}>
               <div className={styles.frame} aria-hidden="true" />
               <div className={styles.imageBox}>
-                <img src={IMAGES.heroPortrait} alt="Lekarka dentystka" />
+                <img src={IMAGES.galleryReception} alt="Wnętrze gabinetu" />
+                <div className={styles.imageOverlay} aria-hidden="true" />
+              </div>
+
+              <div className={`${styles.card} ${styles.cardTop}`}>
+                <span className={styles.cardIcon}>
+                  <ShieldIcon />
+                </span>
+                <div>
+                  <p className={styles.cardValue}>Od 2009 roku</p>
+                  <p className={styles.cardLabel}>zaufanie pacjentów</p>
+                </div>
+              </div>
+
+              <div className={`${styles.card} ${styles.cardBottom}`}>
+                <span className={styles.cardIcon}>
+                  <PinIcon />
+                </span>
+                <div>
+                  <p className={styles.cardValue}>ul. Koronowska 42</p>
+                  <p className={styles.cardLabel}>Bydgoszcz</p>
+                </div>
               </div>
             </div>
           </Reveal>
