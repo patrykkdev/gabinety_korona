@@ -62,56 +62,63 @@
   border-bottom-color: var(--accent);
 }
 
-.list {
-  list-style: none;
-  margin: 0 0 28px;
-  padding: 0;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 0 0 32px;
 }
 
-.row {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--hairline);
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--hairline-soft);
+  padding: 26px 24px 24px;
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
 }
 
-.row:last-child {
-  border-bottom: none;
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-line);
+  box-shadow: 0 16px 32px -20px rgba(14, 13, 12, 0.28);
 }
 
-.title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text);
-  white-space: nowrap;
+.cardPromo {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
 }
 
 .promoBadge {
+  position: absolute;
+  top: -11px;
+  right: 20px;
   background: var(--accent);
   color: var(--bg);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 3px 8px;
+  padding: 4px 10px;
   white-space: nowrap;
 }
 
-.leader {
-  flex: 1;
-  border-bottom: 1px dotted var(--hairline-strong);
-  margin-bottom: 5px;
+.cardTitle {
+  margin: 0 0 20px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+  min-height: 44px;
 }
 
 .priceGroup {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  white-space: nowrap;
+  flex-wrap: wrap;
 }
 
 .oldPrice {
@@ -121,7 +128,9 @@
 }
 
 .price {
-  font-size: 16px;
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-size: 26px;
   font-weight: 600;
   color: var(--text-bright);
   white-space: nowrap;
@@ -132,10 +141,15 @@
 }
 
 .pricePlaceholder {
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--text-ghost);
+  display: inline-block;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
   white-space: nowrap;
 }
 
@@ -151,8 +165,17 @@
     padding: 64px 0;
   }
 
-  .title {
-    font-size: 15px;
-    white-space: normal;
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardTitle {
+    min-height: 0;
   }
 }

@@ -37,6 +37,14 @@ export default function Contact() {
                   </span>
                 ))}
               </p>
+              <a
+                href={CONTACT.mapHref}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={styles.mapLink}
+              >
+                Zobacz na mapie <span>↗</span>
+              </a>
             </div>
 
             <div className={styles.infoBlock}>
@@ -55,6 +63,16 @@ export default function Contact() {
 
             <div className={styles.noteWrap}>
               <p className={styles.note}>{CONTACT.note}</p>
+            </div>
+
+            <div className={styles.map}>
+              <iframe
+                src={CONTACT.mapEmbedSrc}
+                title="Lokalizacja Gabinety Korona na mapie Google"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
 

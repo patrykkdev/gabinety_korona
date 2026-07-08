@@ -3,11 +3,13 @@ import styles from './App.module.css';
 import AnnouncementBar from './components/AnnouncementBar.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
+import Highlights from './components/Highlights.jsx';
 import Philosophy from './components/Philosophy.jsx';
 import Team from './components/Team.jsx';
 import Offer from './components/Offer.jsx';
 import Cennik from './components/Cennik.jsx';
 import Gallery from './components/Gallery.jsx';
+import Reviews from './components/Reviews.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 
@@ -34,11 +36,13 @@ export default function App() {
       <Navbar mode={mode} onToggleMode={toggleMode} />
       <main>
         <Hero />
+        <Highlights />
         <Philosophy />
         <Team />
         <Offer />
         <Cennik />
         <Gallery />
+        <Reviews />
         <Contact />
       </main>
       <Footer />

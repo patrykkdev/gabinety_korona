@@ -30,33 +30,35 @@ export default function Cennik() {
           ))}
         </Reveal>
 
-        <Reveal>
-          <ul className={styles.list}>
-            {current.items.map((item) => (
-              <li key={item.title} className={styles.row}>
-                <span className={styles.title}>
-                  {item.title}
-                  {item.oldPrice && <span className={styles.promoBadge}>Promocja</span>}
+        <div className={styles.grid}>
+          {current.items.map((item, i) => (
+            <Reveal
+              as="article"
+              key={item.title}
+              delay={i * 50}
+              className={`${styles.card} ${item.oldPrice ? styles.cardPromo : ''}`}
+            >
+              {item.oldPrice && <span className={styles.promoBadge}>Promocja</span>}
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <div className={styles.priceGroup}>
+                {item.oldPrice && <span className={styles.oldPrice}>{item.oldPrice}</span>}
+                <span
+                  className={
+                    !item.price
+                      ? styles.pricePlaceholder
+                      : item.oldPrice
+                        ? `${styles.price} ${styles.promoPrice}`
+                        : styles.price
+                  }
+                >
+                  {item.price || 'wycena indywidualna'}
                 </span>
-                <span className={styles.leader} aria-hidden="true" />
-                <span className={styles.priceGroup}>
-                  {item.oldPrice && <span className={styles.oldPrice}>{item.oldPrice}</span>}
-                  <span
-                    className={
-                      !item.price
-                        ? styles.pricePlaceholder
-                        : item.oldPrice
-                          ? `${styles.price} ${styles.promoPrice}`
-                          : styles.price
-                    }
-                  >
-                    {item.price || 'wycena indywidualna'}
-                  </span>
-                </span>
-              </li>
-            ))}
-          </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
 
+        <Reveal>
           <p className={styles.note}>{current.note}</p>
         </Reveal>
       </div>

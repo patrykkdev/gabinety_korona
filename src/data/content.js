@@ -41,6 +41,39 @@ export const VALUES = [
   },
 ];
 
+export const HIGHLIGHTS = [
+  {
+    num: '01',
+    title: 'Wybielanie zębów',
+    desc: 'Bezpieczne rozjaśnienie uśmiechu metodą nakładkową lub gabinetową.',
+  },
+  {
+    num: '02',
+    title: 'Leczenie zachowawcze',
+    desc: 'Estetyczne wypełnienia i leczenie próchnicy bez bólu.',
+  },
+  {
+    num: '03',
+    title: 'Implanty i protetyka',
+    desc: 'Trwałe uzupełnienie braków — od pojedynczego zęba po pełne łuki.',
+  },
+  {
+    num: '04',
+    title: 'Kosmetologia twarzy',
+    desc: 'Peelingi, mezoterapia i zabiegi przeciwstarzeniowe.',
+  },
+  {
+    num: '05',
+    title: 'Higiena i profilaktyka',
+    desc: 'Skaling, piaskowanie i indywidualny plan pielęgnacji.',
+  },
+  {
+    num: '06',
+    title: 'Modelowanie sylwetki',
+    desc: 'Zabiegi na ciało dobrane do Twoich potrzeb.',
+  },
+];
+
 export const TEAM = [
   {
     role: 'Stomatologia',
@@ -122,11 +155,49 @@ export const CENNIK = {
   },
 };
 
+// Przykładowe opinie — podmień na prawdziwe treści z Google (Gabinety Korona, ul. Koronowska 42).
+export const REVIEWS_SUMMARY = {
+  rating: 4.9,
+  count: 87,
+  href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    'Gabinety Korona, ul. Koronowska 42, 85-405 Bydgoszcz',
+  )}`,
+};
+
+export const REVIEWS = [
+  {
+    name: 'Anna K.',
+    rating: 5,
+    text: 'Bardzo profesjonalne podejście i spokojna atmosfera. Leczenie kanałowe pod mikroskopem przebiegło zupełnie bezboleśnie.',
+    tag: 'Stomatologia',
+  },
+  {
+    name: 'Marta W.',
+    rating: 5,
+    text: 'Pani kosmetolog dobrała zabieg idealnie pod moją cerę. Efekty widać już po pierwszej wizycie, a atmosfera w gabinecie jest bardzo kameralna.',
+    tag: 'Kosmetologia',
+  },
+  {
+    name: 'Piotr S.',
+    rating: 5,
+    text: 'Wreszcie gabinet, w którym czuję się jak pacjent, a nie numerek. Wszystko dokładnie wytłumaczone przed zabiegiem.',
+    tag: 'Stomatologia',
+  },
+  {
+    name: 'Katarzyna L.',
+    rating: 4,
+    text: 'Bardzo dobra opieka i miła obsługa recepcji. Polecam zwłaszcza osobom, które stresują się wizytami u dentysty.',
+    tag: 'Stomatologia',
+  },
+];
+
 export const GALLERY = [
   { src: IMAGES.galleryReception, alt: 'Recepcja', large: true },
   { src: IMAGES.galleryTreatment, alt: 'Gabinet zabiegowy', large: false },
   { src: IMAGES.galleryDetails, alt: 'Detale wnętrza', large: false },
 ];
+
+const MAP_QUERY = 'Gabinety Korona, ul. Koronowska 42, 85-405 Bydgoszcz';
 
 export const CONTACT = {
   address: ['ul. Koronowska 42', '85-405 Bydgoszcz'],
@@ -137,6 +208,8 @@ export const CONTACT = {
   email: 'recepcja@gabinetykorona.pl',
   note: 'Bezpłatny parking dla pacjentów bezpośrednio przy budynku.',
   services: ['Stomatologia', 'Kosmetologia', 'Inne / pytanie ogólne'],
+  mapEmbedSrc: `https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=16&output=embed`,
+  mapHref: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`,
 };
 
 export const FOOTER_COLUMNS = [
